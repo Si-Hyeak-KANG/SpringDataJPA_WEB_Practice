@@ -31,7 +31,7 @@ public class Member extends Auditable {
     private String phone;
 
     @Enumerated(value = EnumType.STRING)
-    private MemberStatus memberStatus;
+    private MemberStatus memberStatus = MemberStatus.MEMBER_ACTIVE;
 
     @OneToOne(mappedBy = "member")
     private Stamp stamp;
