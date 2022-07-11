@@ -5,6 +5,9 @@ import jpa.practice.domain.member.repository.MemberRepository;
 import jpa.practice.exception.BusinessLogicException;
 import jpa.practice.exception.ExceptionCode;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,9 +48,10 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<Member> findMembers() {
-        return memberRepository.findAll();
+    public Page<Member> findMembers(int page, int size) {
+        return memberRepository.findAll(PageRequest.of(page, size, Sort.by("memberId").descending()));
     }
+
 
     @Override
     public void deleteMember(long memberId) {

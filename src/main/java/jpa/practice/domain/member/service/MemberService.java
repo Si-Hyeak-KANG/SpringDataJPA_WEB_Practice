@@ -1,6 +1,7 @@
 package jpa.practice.domain.member.service;
 
 import jpa.practice.domain.member.entity.Member;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public interface MemberService {
     /**
      * 회원 전체 조회
      */
-    public List<Member> findMembers();
+    public Page<Member> findMembers(int page, int size);
 
     /**
      * 회원 삭제
