@@ -64,7 +64,8 @@ public class MemberController {
                                      @Positive @RequestParam int size) {
         Page<Member> pageMembers = memberService.findMembers(page - 1, size);
         List<Member> members = pageMembers.getContent();
-        return null;
+
+        return new ResponseEntity(mapper.membersToMemberResponseDtos(members));
     }
 
     // deleteMember
