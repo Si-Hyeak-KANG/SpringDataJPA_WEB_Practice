@@ -1,7 +1,6 @@
 package jpa.practice.domain.stamp;
 
 import jpa.practice.audit.Auditable;
-import jpa.practice.domain.member.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,10 +21,10 @@ public class Stamp extends Auditable {
 
     @OneToOne
     @JoinColumn(name = "MEMBER_ID")
-    private Member member;
+    private jpa.practice.domain.member.entity.member member;
 
     // JPA 연관 메서드
-    public void setMember(Member member) {
+    public void setMember(jpa.practice.domain.member.entity.member member) {
         this.member = member;
     }
 }
