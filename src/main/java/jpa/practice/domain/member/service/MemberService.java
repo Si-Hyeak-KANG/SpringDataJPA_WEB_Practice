@@ -1,6 +1,6 @@
 package jpa.practice.domain.member.service;
 
-import jpa.practice.domain.member.entity.member;
+import jpa.practice.domain.member.entity.Member;
 import org.springframework.data.domain.Page;
 
 public interface MemberService {
@@ -8,22 +8,22 @@ public interface MemberService {
     /**
      * 회원가입
      */
-    public member createMember(member member);
+    public Member createMember(Member member);
 
     /**
      * 회원 정보 수정
      */
-    public member updateMember(member member);
+    public Member updateMember(Member member);
 
     /**
      * 회원 조회
      */
-    public member findMember(long memberId);
+    public Member findMember(long memberId);
 
     /**
      * 회원 전체 조회
      */
-    public Page<member> findMembers(int page, int size);
+    public Page<Member> findMembers(int page, int size);
 
     /**
      * 회원 삭제

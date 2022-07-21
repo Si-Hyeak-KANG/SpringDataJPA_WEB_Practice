@@ -3,6 +3,7 @@ package jpa.practice.domain.member.entity;
 import jpa.practice.audit.Auditable;
 import jpa.practice.domain.order.entity.Order;
 import jpa.practice.domain.stamp.Stamp;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,7 +16,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-public class member extends Auditable {
+public class Member extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

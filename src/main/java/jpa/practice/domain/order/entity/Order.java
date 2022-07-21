@@ -1,6 +1,7 @@
 package jpa.practice.domain.order.entity;
 
 import jpa.practice.audit.Auditable;
+import jpa.practice.domain.member.entity.Member;
 import jpa.practice.domain.ordercoffee.OrderCoffee;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,13 +26,13 @@ public class Order extends Auditable {
 
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
-    private jpa.practice.domain.member.entity.member member;
+    private Member member;
 
     @OneToMany(mappedBy = "order")
     private List<OrderCoffee> orderCoffees = new ArrayList<>();
 
     // JPA 연관 메서드
-    public void setMember(jpa.practice.domain.member.entity.member member) {
+    public void setMember(Member member) {
         this.member = member;
     }
 
